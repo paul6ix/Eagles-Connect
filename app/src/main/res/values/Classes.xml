@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+	<string-array name="Class">
+		<item name="2015">Class of 2015</item>
+		<item name="2014">Class of 2014</item>
+		<item name="2013">Class of 2013</item>
+		<item name="2012">Class of 2012</item>
+		<item name="2011">Class of 2011</item>
+		<item name="2010">Class of 2010</item>
+		<item name="2009">Class of 2009</item>
+		<item name="2008">Class of 2008</item>
+		<item name="2007">Class of 2007</item>
+		<item name="2006">Class of 2006</item>
+
+	</string-array>
+</resources>

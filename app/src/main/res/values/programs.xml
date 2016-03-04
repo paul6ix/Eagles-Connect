@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+	<string-array name="Programs">
+		<item name="build">Building Technology</item>
+		<item name="chem">Chemical Engineering</item>
+        <item name="civil">Civil Engineering</item>
+        <item name="comp">Computer Engineering</item>
+        <item name="elect">Electrical Engineering</item>
+        <item name="mech">Mechanical Engineering</item>
+        <item name="mech">Inform and comm Engineering</item>
+
+	</string-array>
+</resources>
