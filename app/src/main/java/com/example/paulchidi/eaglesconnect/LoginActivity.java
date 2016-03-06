@@ -8,7 +8,6 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.parse.LogInCallback;
 import com.parse.ParseException;
@@ -55,7 +54,7 @@ public class LoginActivity extends AppCompatActivity {
         String password = etPassword.getText().toString().trim();
 
         if (username.isEmpty() || password.isEmpty()) {
-           alertInfo();
+            alertInfo();
         } else {
             ParseUser.logInInBackground(username, password, new LogInCallback() {
                 @Override
@@ -79,13 +78,14 @@ public class LoginActivity extends AppCompatActivity {
         }
 
     }
-public void alertInfo(){
-    AlertDialog.Builder builder = new AlertDialog.Builder(LoginActivity.this);
-    builder.setMessage(R.string.toast_login_msg)
-            .setTitle("Information")
-            .setPositiveButton(android.R.string.ok, null);
-    AlertDialog dialog = builder.create();
-    dialog.show();
-}
+
+    public void alertInfo() {
+        AlertDialog.Builder builder = new AlertDialog.Builder(LoginActivity.this);
+        builder.setMessage(R.string.toast_login_msg)
+                .setTitle("Information")
+                .setPositiveButton(android.R.string.ok, null);
+        AlertDialog dialog = builder.create();
+        dialog.show();
+    }
 
 }

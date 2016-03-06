@@ -1,8 +1,9 @@
 package com.example.paulchidi.eaglesconnect;
 
+import android.content.Intent;
 import android.os.Bundle;
-import android.view.View;
 import android.support.design.widget.NavigationView;
+import android.support.v4.app.FragmentTransaction;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
@@ -10,10 +11,14 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.TextView;
+
+import com.parse.ParseUser;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
+    protected TextView tvUsername;
 
     NavigationView navigationView = null;
     Toolbar toolbar = null;
@@ -22,6 +27,7 @@ public class MainActivity extends AppCompatActivity
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
 
         //Set the fragment initially
         MainFragment fragment = new MainFragment();
@@ -33,8 +39,6 @@ public class MainActivity extends AppCompatActivity
         toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-   ;
-
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
 
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
@@ -45,11 +49,26 @@ public class MainActivity extends AppCompatActivity
         navigationView = (NavigationView) findViewById(R.id.nav_view);
 
         //How to change elements in the header programatically
-        View headerView = navigationView.getHeaderView(0);
-        TextView emailText = (TextView) headerView.findViewById(R.id.email);
-        emailText.setText("Class of 2015");
+
 
         navigationView.setNavigationItemSelectedListener(this);
+        ParseUser currentUser = ParseUser.getCurrentUser();
+
+
+        if (currentUser != null) {
+            String user = currentUser.getUsername();
+
+            View headerView = navigationView.getHeaderView(0);
+            TextView emailText = (TextView) headerView.findViewById(R.id.email);
+            emailText.setText("Class of 2015");
+            tvUsername = (TextView) headerView.findViewById(R.id.username);
+
+
+            tvUsername.setText(user);
+        } else {
+            Intent intentLogin = new Intent(MainActivity.this, LoginActivity.class);
+            startActivity(intentLogin);
+        }
     }
 
     @Override
@@ -90,15 +109,15 @@ public class MainActivity extends AppCompatActivity
         // Handle navigation view item clicks here.
         int id = item.getItemId();
 
-        if (id == R.id.nav_camara) {
+        if (id == R.id.nav_home) {
             //Set the fragment initially
             MainFragment fragment = new MainFragment();
-            android.support.v4.app.FragmentTransaction fragmentTransaction =
+            FragmentTransaction fragmentTransaction =
                     getSupportFragmentManager().beginTransaction();
             fragmentTransaction.replace(R.id.fragment_container, fragment);
             fragmentTransaction.commit();
             // Handle the camera action
-        } else if (id == R.id.nav_gallery) {
+        } else if (id == R.id.nav_profile) {
             //Set the fragment initially
            /* ClassFragment fragment = new ClassFragment();
             android.support.v4.app.FragmentTransaction fragmentTransaction =
@@ -109,16 +128,28 @@ public class MainActivity extends AppCompatActivity
         } else if (id == R.id.nav_class) {
 
             ClassFragment fragment = new ClassFragment();
-            android.support.v4.app.FragmentTransaction fragmentTransaction =
+            FragmentTransaction fragmentTransaction =
                     getSupportFragmentManager().beginTransaction();
             fragmentTransaction.replace(R.id.fragment_container, fragment);
             fragmentTransaction.commit();
-        } else if (id == R.id.nav_manage) {
+        } else if (id == R.id.nav_settings) {
 
 
-        } else if (id == R.id.nav_share) {
+        } else if (id == R.id.nav_chat) {
 
-        } else if (id == R.id.nav_send) {
+        } else if (id == R.id.nav_logout) {
+            //Logging out the user
+            ParseUser.logOut();
+            ParseUser currentUser = ParseUser.getCurrentUser();
+            if (currentUser == null) {
+                Intent intentLogin = new Intent(MainActivity.this, LoginActivity.class);
+                intentLogin.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
+                intentLogin.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                startActivity(intentLogin);
+            } else {
+
+            }
+
 
         }
 

@@ -9,8 +9,7 @@
         android:repeatCount="infinite"
         android:repeatMode="reverse"
         android:toXScale=".8"
-        android:toYScale=".8"
-        />
+        android:toYScale=".8" />
 
 
 </set>

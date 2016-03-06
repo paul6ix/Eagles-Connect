@@ -27,6 +27,7 @@ public class CollegeFragment extends ListFragment {
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_college, container, false);
     }
+
     @Override
     public void onActivityCreated(Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
@@ -37,9 +38,9 @@ public class CollegeFragment extends ListFragment {
     @Override
     public void onListItemClick(ListView l, View v, int position, long id) {
         super.onListItemClick(l, v, position, id);
-        switch (position){
+        switch (position) {
             case 0:
-                 ProgramFragment fragment = new ProgramFragment();
+                ProgramFragment fragment = new ProgramFragment();
                 android.support.v4.app.FragmentTransaction ft = getFragmentManager().beginTransaction();
                 ft.replace(R.id.fragment_container, fragment);
                 ft.commit();

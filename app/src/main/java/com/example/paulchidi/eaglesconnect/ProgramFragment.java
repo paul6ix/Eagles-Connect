@@ -10,7 +10,7 @@ import android.widget.ArrayAdapter;
 
 
 /**
- * A simple {@link Fragment} subclass.
+ * A simple {@link } subclass.
  */
 public class ProgramFragment extends ListFragment {
 
@@ -26,6 +26,7 @@ public class ProgramFragment extends ListFragment {
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_program, container, false);
     }
+
     @Override
     public void onActivityCreated(Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);

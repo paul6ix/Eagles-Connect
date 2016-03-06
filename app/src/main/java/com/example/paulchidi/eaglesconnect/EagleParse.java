@@ -11,7 +11,7 @@ public class EagleParse extends Application {
     public void onCreate() {
         super.onCreate();
 
-            Parse.initialize(this, "5Zz7ZKLLvqhIu2Ud5m73LrpVv1tKu7uJItJuHu9J", "UOkZPXCxwODcR22UeQZgDaUWvlU3tbDULoFDVqpf");
 
+        Parse.initialize(this, "EPLDczZ4dS5vHJPQKKQbKmlC096JMf6gVtzTbqOs", "UD9qZuBfC2s72egfedTlWIvN0i4nxZeGdw1WSpMB");
     }
 }
