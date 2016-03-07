@@ -1,10 +1,11 @@
-package com.example.paulchidi.eaglesconnect;
+package com.example.paulchidi.eaglesconnect.activities;
 
 
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 
+import com.example.paulchidi.eaglesconnect.R;
 import com.parse.ParseUser;
 
 

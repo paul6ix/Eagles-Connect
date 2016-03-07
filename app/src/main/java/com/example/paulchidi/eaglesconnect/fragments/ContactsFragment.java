@@ -1,4 +1,4 @@
-package com.example.paulchidi.eaglesconnect;
+package com.example.paulchidi.eaglesconnect.fragments;
 
 
 import android.os.Bundle;
@@ -7,14 +7,16 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.example.paulchidi.eaglesconnect.R;
+
 
 /**
  * A simple {@link Fragment} subclass.
  */
-public class MainFragment extends Fragment {
+public class ContactsFragment extends Fragment {
 
 
-    public MainFragment() {
+    public ContactsFragment() {
         // Required empty public constructor
     }
 
@@ -22,7 +24,7 @@ public class MainFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        View rootView = inflater.inflate(R.layout.fragment_main, container, false);
+        View rootView = inflater.inflate(R.layout.fragment_contacts, container, false);
 
 
         // Inflate the layout for this fragment

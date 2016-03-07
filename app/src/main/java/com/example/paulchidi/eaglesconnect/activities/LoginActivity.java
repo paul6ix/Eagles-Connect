@@ -1,4 +1,4 @@
-package com.example.paulchidi.eaglesconnect;
+package com.example.paulchidi.eaglesconnect.activities;
 
 import android.app.AlertDialog;
 import android.content.Intent;
@@ -9,6 +9,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
+import com.example.paulchidi.eaglesconnect.R;
 import com.parse.LogInCallback;
 import com.parse.ParseException;
 import com.parse.ParseUser;
@@ -18,6 +19,7 @@ public class LoginActivity extends AppCompatActivity {
     protected EditText etUsername;
     protected EditText etPassword;
     protected Button btnLogin;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,6 +35,7 @@ public class LoginActivity extends AppCompatActivity {
         etSignup_link.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
                 Intent intentSignUp = new Intent(LoginActivity.this, SignUpActivity.class);
                 startActivity(intentSignUp);
 
@@ -50,6 +53,7 @@ public class LoginActivity extends AppCompatActivity {
     }
 
     public void login() {
+
         String username = etUsername.getText().toString().trim();
         String password = etPassword.getText().toString().trim();
 
@@ -80,6 +84,7 @@ public class LoginActivity extends AppCompatActivity {
     }
 
     public void alertInfo() {
+
         AlertDialog.Builder builder = new AlertDialog.Builder(LoginActivity.this);
         builder.setMessage(R.string.toast_login_msg)
                 .setTitle("Information")

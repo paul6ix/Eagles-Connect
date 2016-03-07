@@ -1,4 +1,4 @@
-package com.example.paulchidi.eaglesconnect;
+package com.example.paulchidi.eaglesconnect.activities;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -14,6 +14,10 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.TextView;
 
+import com.example.paulchidi.eaglesconnect.R;
+import com.example.paulchidi.eaglesconnect.fragments.ClassFragment;
+import com.example.paulchidi.eaglesconnect.fragments.ContactsFragment;
+import com.example.paulchidi.eaglesconnect.fragments.MainFragment;
 import com.parse.ParseUser;
 
 public class MainActivity extends AppCompatActivity
@@ -98,7 +102,18 @@ public class MainActivity extends AppCompatActivity
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_settings) {
             return true;
+        } else if (id == R.id.action_edit_contacts) {
+            Intent intentEditContacts = new Intent(this, EditContactsActivity.class);
+            startActivity(intentEditContacts);
+
         }
+
+
+
+
+
+
+
 
         return super.onOptionsItemSelected(item);
     }
@@ -135,7 +150,11 @@ public class MainActivity extends AppCompatActivity
         } else if (id == R.id.nav_settings) {
 
 
-        } else if (id == R.id.nav_chat) {
+        } else if (id == R.id.nav_contacts) {
+            ContactsFragment fragment = new ContactsFragment();
+            FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
+            fragmentTransaction.replace(R.id.fragment_container, fragment);
+            fragmentTransaction.commit();
 
         } else if (id == R.id.nav_logout) {
             //Logging out the user

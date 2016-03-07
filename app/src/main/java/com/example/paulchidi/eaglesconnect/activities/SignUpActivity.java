@@ -1,4 +1,4 @@
-package com.example.paulchidi.eaglesconnect;
+package com.example.paulchidi.eaglesconnect.activities;
 
 import android.app.AlertDialog;
 import android.content.Intent;
@@ -8,6 +8,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 
+import com.example.paulchidi.eaglesconnect.R;
 import com.parse.ParseException;
 import com.parse.ParseUser;
 import com.parse.SignUpCallback;

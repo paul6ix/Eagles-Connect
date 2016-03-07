@@ -17,4 +17,6 @@
     <string name="navigation_drawer_close">Close navigation drawer</string>
     <string name="txt_view_email">John.doe@gmail.com</string>
     <string name="txt_username">John Doe</string>
+    <string name="action_contact">Edit Contacts</string>
+    <string name="title_activity_edit_contacts">Edit Contacts</string>
 </resources>
