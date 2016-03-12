@@ -2,6 +2,7 @@ package com.example.paulchidi.eaglesconnect.fragments;
 
 
 import android.app.AlertDialog;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.ListFragment;
@@ -12,6 +13,7 @@ import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
+import com.example.paulchidi.eaglesconnect.Chat;
 import com.example.paulchidi.eaglesconnect.ParseConstants;
 import com.example.paulchidi.eaglesconnect.R;
 import com.parse.FindCallback;
@@ -28,9 +30,8 @@ import java.util.List;
  */
 public class ContactsFragment extends ListFragment {
     public static final String TAG = ContactsFragment.class.getSimpleName();
-
+    public static ParseUser mCurrentUser;
     protected ParseRelation<ParseUser> mFriendsRelation;
-    protected ParseUser mCurrentUser;
     protected List<ParseUser> mFriends;
 
 
@@ -95,6 +96,9 @@ public class ContactsFragment extends ListFragment {
     @Override
     public void onListItemClick(ListView l, View v, int position, long id) {
         super.onListItemClick(l, v, position, id);
+        Intent intentChat = new Intent(getActivity(), Chat.class);
+        intentChat.putExtra(ParseConstants.EXTRA_DATA, mFriends.get(position).getUsername());
+        startActivity(intentChat);
 
 
     }

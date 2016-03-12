@@ -19,4 +19,5 @@
     <string name="txt_username">John Doe</string>
     <string name="action_contact">Edit Contacts</string>
     <string name="title_activity_edit_contacts">Edit Contacts</string>
+    <string name="type_msg">Type message</string>
 </resources>
