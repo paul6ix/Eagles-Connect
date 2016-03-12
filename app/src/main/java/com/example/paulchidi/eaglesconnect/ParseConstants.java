@@ -5,4 +5,5 @@ package com.example.paulchidi.eaglesconnect;
  */
 public final class ParseConstants {
     public static final String Key_Username = "username";
+    public static final String Key_Friends_Relations = "friendsrelation";
 }
