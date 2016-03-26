@@ -35,6 +35,7 @@ import java.util.List;
  */
 public class Chat extends CustomActivity {
 
+
     /**
      * The handler.
      */
@@ -71,6 +72,7 @@ public class Chat extends CustomActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.chat);
+
 
         convList = new ArrayList<Conversation>();
         ListView list = (ListView) findViewById(R.id.list);

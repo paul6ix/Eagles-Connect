@@ -2,7 +2,7 @@
 <resources>
     <string-array name="Colleges">
         <item name="coe">College Of Engineering</item>
-        <item name="cst">College Of Sci and Tech</item>
+        <item name="cst">College Of Science and Technology</item>
         <item name="clds">College of Leadership</item>
         <item name="cbss">College of Business</item>
 

@@ -5,17 +5,17 @@ import android.app.AlertDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
-import android.support.v4.app.ListFragment;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ArrayAdapter;
-import android.widget.ListView;
+import android.widget.AdapterView;
+import android.widget.GridView;
 
 import com.example.paulchidi.eaglesconnect.Chat;
 import com.example.paulchidi.eaglesconnect.ParseConstants;
 import com.example.paulchidi.eaglesconnect.R;
+import com.example.paulchidi.eaglesconnect.utils.UserAdapter;
 import com.parse.FindCallback;
 import com.parse.ParseException;
 import com.parse.ParseQuery;
@@ -28,11 +28,13 @@ import java.util.List;
 /**
  * A simple {@link Fragment} subclass.
  */
-public class ContactsFragment extends ListFragment {
+public class ContactsFragment extends Fragment {
     public static final String TAG = ContactsFragment.class.getSimpleName();
     public static ParseUser mCurrentUser;
     protected ParseRelation<ParseUser> mFriendsRelation;
     protected List<ParseUser> mFriends;
+    protected GridView gvContacts;
+
 
 
     public ContactsFragment() {
@@ -44,6 +46,7 @@ public class ContactsFragment extends ListFragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.fragment_contacts, container, false);
+        gvContacts = (GridView) rootView.findViewById(R.id.gridview_contacts);
 
 
         // Inflate the layout for this fragment
@@ -75,14 +78,16 @@ public class ContactsFragment extends ListFragment {
                         usernames[i] = user.getUsername();
                         i++;
                     }
-                    ArrayAdapter<String> adapter = new ArrayAdapter<String>(
-                            getListView().getContext(),
-                            android.R.layout.simple_list_item_1,
-                            usernames);
-                    setListAdapter(adapter);
+//                    if (gvContacts.getAdapter() == null) {
+                    UserAdapter adapter = new UserAdapter(getActivity(), mFriends);
+                    gvContacts.setAdapter(adapter);
+//                    } else {
+//                        ((UserAdapter) gvContacts.getAdapter()).refill(mFriends);
+//                    }
+
                 } else {
                     Log.e(TAG, e.getMessage());
-                    AlertDialog.Builder builder = new AlertDialog.Builder(getListView().getContext());
+                    AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
                     builder.setMessage(e.getMessage())
                             .setTitle("Error")
                             .setPositiveButton(android.R.string.ok, null);
@@ -91,9 +96,19 @@ public class ContactsFragment extends ListFragment {
                 }
             }
         });
+        gvContacts.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                Intent intentChat = new Intent(getActivity(), Chat.class);
+                intentChat.putExtra(ParseConstants.EXTRA_DATA, mFriends.get(position).getUsername());
+                startActivity(intentChat);
+            }
+        });
+
     }
 
-    @Override
+
+   /* @Override
     public void onListItemClick(ListView l, View v, int position, long id) {
         super.onListItemClick(l, v, position, id);
         Intent intentChat = new Intent(getActivity(), Chat.class);
@@ -101,5 +116,5 @@ public class ContactsFragment extends ListFragment {
         startActivity(intentChat);
 
 
-    }
+    }*/
 }

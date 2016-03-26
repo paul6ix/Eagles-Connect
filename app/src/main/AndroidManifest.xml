@@ -35,7 +35,10 @@
             android:label="@string/title_activity_sign_up"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name=".activities.YearBookActivity" />
+        <activity
+            android:name=".activities.YearBookActivity"
+            android:label="Year book"
+            android:screenOrientation="portrait" />
         <activity android:name=".activities.SplashActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

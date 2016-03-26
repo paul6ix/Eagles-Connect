@@ -41,11 +41,11 @@ public class ClassFragment extends ListFragment {
     @Override
     public void onListItemClick(ListView l, View v, int position, long id) {
         super.onListItemClick(l, v, position, id);
-        if (position == 0) {
-            CollegeFragment fragment = new CollegeFragment();
+
+        CollegeFragment fragment = new CollegeFragment();
             android.support.v4.app.FragmentTransaction ft = getFragmentManager().beginTransaction();
             ft.replace(R.id.fragment_container, fragment);
             ft.commit();
-        }
+
     }
 }
