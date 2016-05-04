@@ -12,8 +12,8 @@ import com.parse.Parse;
  * Created by Paul Chidi on 3/1/2016.
  */
 public class EagleKinvey extends Application {
-    public static final String eagles_app_key = "kid_b168D4AefW";
-    public static final String eagles_app_secret = "b273dfc47e934a8cb445c12893e1ddd9";
+    public static final String eagles_app_key = "kid_b1AETZTffb";
+    public static final String eagles_app_secret = "8d83812e316b4273b710821646659dfc";
     protected Client mKinveyClient;
     String TAG;
 

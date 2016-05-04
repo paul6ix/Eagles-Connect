@@ -3,47 +3,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/colorPrimaryDark"
-    tools:context="com.compscitutorials.basigarcia.navigationdrawervideotutorial.GalleryFragment">
+    tools:context="com.compscitutorials.basigarcia.navigationdrawervideotutorial.Forumfragment">
 
-
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_marginEnd="24dp"
-        android:layout_marginRight="24dp"
-        android:layout_marginTop="47dp"
-        android:layout_toLeftOf="@+id/textView2"
-        android:layout_toStartOf="@+id/textView2"
-        android:text="Forums"
-        android:textAppearance="?android:attr/textAppearanceMedium"
-        android:textColor="@color/green_btn_color"
-        android:textStyle="bold" />
-
-    <TextView
-        android:id="@+id/textView2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/button"
-        android:layout_alignStart="@+id/button"
-        android:layout_alignTop="@+id/textView"
-        android:text="Discover"
-        android:textAppearance="?android:attr/textAppearanceMedium"
-        android:textColor="@color/green_btn_color"
-        android:textStyle="bold" />
-
-    <TextView
-        android:id="@+id/textView3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignEnd="@+id/textView4"
-        android:layout_alignRight="@+id/textView4"
-        android:layout_alignTop="@+id/textView2"
-        android:text="Create Forum"
-        android:textAppearance="?android:attr/textAppearanceMedium"
-        android:textColor="@color/green_btn_color"
-        android:textStyle="bold" />
 
     <TextView
         android:id="@+id/textView4"
@@ -63,5 +24,32 @@
 
         android:layout_centerHorizontal="true"
         android:text="Discover and join" />
+
+    <Button
+        android:id="@+id/button2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="36dp"
+        android:layout_toLeftOf="@+id/button"
+        android:layout_toStartOf="@+id/button"
+        android:text="Forums" />
+
+    <Button
+        android:id="@+id/button3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/button2"
+        android:layout_centerHorizontal="true"
+        android:text="Discover" />
+
+    <Button
+        android:id="@+id/button_new_forum"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/button3"
+        android:layout_toEndOf="@+id/button"
+        android:layout_toRightOf="@+id/button"
+        android:text="new forum" />
 
 </RelativeLayout>

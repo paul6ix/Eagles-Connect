@@ -28,4 +28,5 @@
     <string name="share_chooser_title">How do you want to share?</string>
     <string name="no_items">No items to display!</string>
     <string name="webApi"><![CDATA["https://api.import.io/store/connector/0b772a90-7f80-4108-8351-a2c611c3a7a6/_query?input=webpage/url:http%3A%2F%2Fcovenantuniversity.edu.ng%2F&&_apikey=00c746d27600491c88b6e73aaa588337d1eaf888e41587e8dd6a4a0ee78997b5404eae63c596974239d1ca77e59c4bf4f8b287f956464eac58272b86a055e6d181f15285b9455a24306a06df53e83d9b"]]></string>
+    <string name="title_activity_create_forum">Create Forum</string>
 </resources>
