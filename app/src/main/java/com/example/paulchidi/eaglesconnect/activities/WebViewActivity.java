@@ -8,14 +8,14 @@ import android.webkit.WebView;
 
 import com.example.paulchidi.eaglesconnect.R;
 
-public class BlogWebViewActivity extends Activity {
+public class WebViewActivity extends Activity {
 
     protected String mUrl;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_blog_web_view);
+        setContentView(R.layout.activity_web_view);
 
         Intent intent = getIntent();
         Uri blogUri = intent.getData();

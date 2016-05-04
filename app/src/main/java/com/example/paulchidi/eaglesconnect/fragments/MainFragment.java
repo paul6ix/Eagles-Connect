@@ -19,7 +19,7 @@ import android.widget.SimpleAdapter;
 import android.widget.TextView;
 
 import com.example.paulchidi.eaglesconnect.R;
-import com.example.paulchidi.eaglesconnect.activities.BlogWebViewActivity;
+import com.example.paulchidi.eaglesconnect.activities.WebViewActivity;
 
 import org.apache.http.HttpEntity;
 import org.apache.http.HttpResponse;
@@ -77,7 +77,7 @@ public class MainFragment extends ListFragment {
             JSONObject jsonPost = jsonPosts.getJSONObject(position);
             String blogUrl = jsonPost.getString("contents_link");
 
-            Intent intent = new Intent(getActivity(), BlogWebViewActivity.class);
+            Intent intent = new Intent(getActivity(), WebViewActivity.class);
             intent.setData(Uri.parse(blogUrl));
             startActivity(intent);
         } catch (JSONException e) {

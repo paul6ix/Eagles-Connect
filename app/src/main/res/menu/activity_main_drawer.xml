@@ -15,6 +15,15 @@
             android:icon="@drawable/groups"
             android:title="Class" />
         <item
+            android:id="@+id/nav_forum"
+            android:icon="@android:drawable/btn_radio"
+            android:title="Forum" />
+
+        <item
+            android:id="@+id/nav_archive"
+            android:icon="@android:drawable/ic_menu_more"
+            android:title="Archive" />
+        <item
             android:id="@+id/nav_settings"
             android:icon="@android:drawable/ic_menu_manage"
             android:title="Settings" />
@@ -23,6 +32,10 @@
     <item android:title="Communicate">
         <menu>
             <item
+                android:id="@+id/nav_help"
+                android:icon="@android:drawable/ic_menu_help"
+                android:title="Help" />
+            <item
                 android:id="@+id/nav_contacts"
                 android:icon="@drawable/contacts"
                 android:title="Contacts" />
@@ -30,6 +43,7 @@
                 android:id="@+id/nav_logout"
                 android:icon="@android:drawable/ic_lock_power_off"
                 android:title="Logout" />
+
         </menu>
     </item>
 

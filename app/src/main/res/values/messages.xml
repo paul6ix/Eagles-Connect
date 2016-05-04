@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+
+    <string-array name="messages">
+        <item name="Shiloh">Shiloh Messages</item>
+        <item name="Chop">Chop Messages</item>
+        <item name="Tuesday">Tuesday Service Messages</item>
+        <item name="Thursday">Thursday Service Messages</item>
+        <item name="Sunday">Sunday Service Messages</item>
+        <item name="fff">Foundation for fortune Messages</item>
+
+    </string-array>
+</resources>

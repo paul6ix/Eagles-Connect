@@ -84,10 +84,10 @@
         android:layout_centerHorizontal="true"
         android:layout_marginTop="30dp"
         android:ems="10"
-        android:hint="Date of birth"
-        android:inputType="date"
-        android:textColor="#8a8584"
+        android:hint="DD/MM/YYYY"
+        android:inputType="datetime"
 
+        android:textColor="#8a8584"
         android:textColorHint="#8a8584" />
 
     <EditText

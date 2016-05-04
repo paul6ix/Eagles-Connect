@@ -1,0 +1,27 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.compscitutorials.basigarcia.navigationdrawervideotutorial.GalleryFragment">
+
+
+    <TextView
+        android:id="@+id/textView_aboutus"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:paddingTop="70dp"
+        android:text="About Us"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
+
+    <TextView
+        android:id="@+id/textView_contactus"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textView_aboutus"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="154dp"
+        android:text="Contact Us"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
+</RelativeLayout>

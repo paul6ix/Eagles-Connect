@@ -14,11 +14,15 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.TextView;
 
+import com.example.paulchidi.eaglesconnect.EagleKinvey;
 import com.example.paulchidi.eaglesconnect.R;
+import com.example.paulchidi.eaglesconnect.fragments.ArchiveFragment;
 import com.example.paulchidi.eaglesconnect.fragments.ClassFragment;
 import com.example.paulchidi.eaglesconnect.fragments.ContactsFragment;
+import com.example.paulchidi.eaglesconnect.fragments.ForumFragment;
+import com.example.paulchidi.eaglesconnect.fragments.HelpFragment;
 import com.example.paulchidi.eaglesconnect.fragments.MainFragment;
-import com.parse.ParseUser;
+import com.kinvey.android.Client;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
@@ -26,11 +30,13 @@ public class MainActivity extends AppCompatActivity
 
     NavigationView navigationView = null;
     Toolbar toolbar = null;
+    Client EagleUser;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        EagleUser = ((EagleKinvey) getApplication()).getmKinveyClient();
 
 
         //Set the fragment initially
@@ -56,11 +62,10 @@ public class MainActivity extends AppCompatActivity
 
 
         navigationView.setNavigationItemSelectedListener(this);
-        ParseUser currentUser = ParseUser.getCurrentUser();
 
 
-        if (currentUser != null) {
-            String user = currentUser.getUsername();
+        if (EagleUser.user().isUserLoggedIn()) {
+            String user = EagleUser.user().getUsername();
 
             View headerView = navigationView.getHeaderView(0);
             TextView emailText = (TextView) headerView.findViewById(R.id.email);
@@ -156,11 +161,27 @@ public class MainActivity extends AppCompatActivity
             fragmentTransaction.replace(R.id.fragment_container, fragment);
             fragmentTransaction.commit();
 
+        } else if (id == R.id.nav_help) {
+            HelpFragment fragment = new HelpFragment();
+            FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
+            transaction.replace(R.id.fragment_container, fragment);
+            transaction.commit();
+
+        } else if (id == R.id.nav_archive) {
+            ArchiveFragment fragment = new ArchiveFragment();
+            FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
+            transaction.replace(R.id.fragment_container, fragment);
+            transaction.commit();
+        } else if (id == R.id.nav_forum) {
+            ForumFragment fragment = new ForumFragment();
+            FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
+            transaction.replace(R.id.fragment_container, fragment);
+            transaction.commit();
         } else if (id == R.id.nav_logout) {
             //Logging out the user
-            ParseUser.logOut();
-            ParseUser currentUser = ParseUser.getCurrentUser();
-            if (currentUser == null) {
+            EagleUser.user().logout().execute();
+            boolean currentUser = EagleUser.user().isUserLoggedIn();
+            if (currentUser == false) {
                 Intent intentLogin = new Intent(MainActivity.this, LoginActivity.class);
                 intentLogin.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
                 intentLogin.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
