@@ -64,7 +64,11 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.example.paulchidi.eaglesconnect.activities.MainActivity" />
         </activity>
-        <activity android:name=".activities.CreateForumActivity"></activity>
+        <activity
+            android:name=".activities.CreateForumActivity"
+            android:label="Create Forum">
+
+        </activity>
     </application>
 
 </manifest>

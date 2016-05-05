@@ -17,7 +17,6 @@ import android.widget.TextView;
 import com.example.paulchidi.eaglesconnect.EagleKinvey;
 import com.example.paulchidi.eaglesconnect.R;
 import com.example.paulchidi.eaglesconnect.fragments.ArchiveFragment;
-import com.example.paulchidi.eaglesconnect.fragments.ClassFragment;
 import com.example.paulchidi.eaglesconnect.fragments.ContactsFragment;
 import com.example.paulchidi.eaglesconnect.fragments.ForumFragment;
 import com.example.paulchidi.eaglesconnect.fragments.HelpFragment;
@@ -145,13 +144,10 @@ public class MainActivity extends AppCompatActivity
             fragmentTransaction.replace(R.id.fragment_container, fragment);
             fragmentTransaction.commit();
 */
-        } else if (id == R.id.nav_class) {
+        } else if (id == R.id.nav_yearbook) {
 
-            ClassFragment fragment = new ClassFragment();
-            FragmentTransaction fragmentTransaction =
-                    getSupportFragmentManager().beginTransaction();
-            fragmentTransaction.replace(R.id.fragment_container, fragment);
-            fragmentTransaction.commit();
+            Intent intentYearbook = new Intent(this, YearBookActivity.class);
+            startActivity(intentYearbook);
         } else if (id == R.id.nav_settings) {
 
 

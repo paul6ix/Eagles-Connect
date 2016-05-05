@@ -11,9 +11,9 @@
             android:icon="@drawable/profile_logo"
             android:title="Profile" />
         <item
-            android:id="@+id/nav_class"
+            android:id="@+id/nav_yearbook"
             android:icon="@drawable/groups"
-            android:title="Class" />
+            android:title="Yearbook" />
         <item
             android:id="@+id/nav_forum"
             android:icon="@android:drawable/btn_radio"

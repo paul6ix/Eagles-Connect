@@ -12,8 +12,8 @@ import com.example.paulchidi.eaglesconnect.custom.CustomAdapter;
 import java.util.ArrayList;
 
 public class YearBookActivity extends AppCompatActivity {
-    public static String[] nameList = {"Naomi Ekpoki ", "Ella Ekpoki", "shadrach",
-            "Egba Onome", "Paul Chidi", "Dami West"
+    public static String[] nameList = {"2015", "2014", "2013",
+            "2012", "2011", "2010"
 
     };
     public static int[] images = {R.drawable.avatar_empty, R.drawable.avatar_empty, R.drawable.avatar_empty,

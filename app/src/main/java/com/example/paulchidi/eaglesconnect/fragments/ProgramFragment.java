@@ -1,7 +1,6 @@
 package com.example.paulchidi.eaglesconnect.fragments;
 
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.ListFragment;
 import android.view.LayoutInflater;
@@ -11,7 +10,6 @@ import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
 import com.example.paulchidi.eaglesconnect.R;
-import com.example.paulchidi.eaglesconnect.activities.YearBookActivity;
 
 
 /**
@@ -42,7 +40,6 @@ public class ProgramFragment extends ListFragment {
     @Override
     public void onListItemClick(ListView l, View v, int position, long id) {
         super.onListItemClick(l, v, position, id);
-        Intent intentYearbook = new Intent(getActivity(), YearBookActivity.class);
-        startActivity(intentYearbook);
+
     }
 }
