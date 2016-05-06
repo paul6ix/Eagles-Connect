@@ -1,8 +1,10 @@
 package com.example.paulchidi.eaglesconnect.activities;
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.view.Window;
 import android.widget.AdapterView;
@@ -25,6 +27,7 @@ public class YearBookActivity extends AppCompatActivity {
     Context context;
     ArrayList names;
     Window window;
+    Toolbar toolbar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,8 +41,16 @@ public class YearBookActivity extends AppCompatActivity {
                 if (position == 0) {
                     Toast toast = Toast.makeText(YearBookActivity.this, "it worked", Toast.LENGTH_LONG);
                     toast.show();
+                } else if (position == 1) {
+                    startActivity(new Intent(YearBookActivity.this, EliteActivity.class));
                 }
             }
         });
+    }
+
+    public void setToolbar() {
+        toolbar = (Toolbar) findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
+
     }
 }

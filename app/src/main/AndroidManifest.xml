@@ -66,9 +66,10 @@
         </activity>
         <activity
             android:name=".activities.CreateForumActivity"
-            android:label="Create Forum">
-
-        </activity>
+            android:label="Create Forum" />
+        <activity
+            android:name=".activities.EliteActivity"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 
 </manifest>
