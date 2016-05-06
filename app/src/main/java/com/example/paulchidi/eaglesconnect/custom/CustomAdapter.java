@@ -7,7 +7,6 @@ import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.example.paulchidi.eaglesconnect.R;
 import com.example.paulchidi.eaglesconnect.activities.YearBookActivity;
@@ -55,12 +54,12 @@ public class CustomAdapter extends BaseAdapter {
         holder.ivAvatar = (ImageView) rowView.findViewById(R.id.imageView_avatar);
         holder.tvName.setText(result[position]);
         holder.ivAvatar.setImageResource(imageId[position]);
-        rowView.setOnClickListener(new View.OnClickListener() {
+        /*rowView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Toast.makeText(context, "You tapped " + result[position], Toast.LENGTH_LONG).show();
             }
-        });
+        });*/
         return rowView;
     }
 

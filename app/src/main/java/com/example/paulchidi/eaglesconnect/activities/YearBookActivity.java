@@ -3,8 +3,11 @@ package com.example.paulchidi.eaglesconnect.activities;
 import android.content.Context;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.view.View;
 import android.view.Window;
+import android.widget.AdapterView;
 import android.widget.GridView;
+import android.widget.Toast;
 
 import com.example.paulchidi.eaglesconnect.R;
 import com.example.paulchidi.eaglesconnect.custom.CustomAdapter;
@@ -16,7 +19,7 @@ public class YearBookActivity extends AppCompatActivity {
             "2012", "2011", "2010"
 
     };
-    public static int[] images = {R.drawable.avatar_empty, R.drawable.avatar_empty, R.drawable.avatar_empty,
+    public static int[] images = {R.drawable.yb, R.drawable.ybelite, R.drawable.avatar_empty,
             R.drawable.avatar_empty, R.drawable.avatar_empty, R.drawable.avatar_empty,};
     protected GridView gvYearbook;
     Context context;
@@ -29,6 +32,14 @@ public class YearBookActivity extends AppCompatActivity {
         setContentView(R.layout.activity_year_book);
         gvYearbook = (GridView) findViewById(R.id.gridView_yearbook);
         gvYearbook.setAdapter(new CustomAdapter(this, nameList, images));
-
+        gvYearbook.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                if (position == 0) {
+                    Toast toast = Toast.makeText(YearBookActivity.this, "it worked", Toast.LENGTH_LONG);
+                    toast.show();
+                }
+            }
+        });
     }
 }
