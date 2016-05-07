@@ -21,6 +21,7 @@ import com.example.paulchidi.eaglesconnect.fragments.ContactsFragment;
 import com.example.paulchidi.eaglesconnect.fragments.ForumFragment;
 import com.example.paulchidi.eaglesconnect.fragments.HelpFragment;
 import com.example.paulchidi.eaglesconnect.fragments.MainFragment;
+import com.example.paulchidi.eaglesconnect.fragments.ProfileFragment;
 import com.kinvey.android.Client;
 
 public class MainActivity extends AppCompatActivity
@@ -138,12 +139,12 @@ public class MainActivity extends AppCompatActivity
             // Handle the camera action
         } else if (id == R.id.nav_profile) {
             //Set the fragment initially
-           /* ClassFragment fragment = new ClassFragment();
+            ProfileFragment fragment = new ProfileFragment();
             android.support.v4.app.FragmentTransaction fragmentTransaction =
                     getSupportFragmentManager().beginTransaction();
             fragmentTransaction.replace(R.id.fragment_container, fragment);
             fragmentTransaction.commit();
-*/
+
         } else if (id == R.id.nav_yearbook) {
 
             Intent intentYearbook = new Intent(this, YearBookActivity.class);

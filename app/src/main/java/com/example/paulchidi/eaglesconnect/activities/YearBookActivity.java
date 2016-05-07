@@ -27,7 +27,7 @@ public class YearBookActivity extends AppCompatActivity {
     Context context;
     ArrayList names;
     Window window;
-    Toolbar toolbar;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -48,9 +48,4 @@ public class YearBookActivity extends AppCompatActivity {
         });
     }
 
-    public void setToolbar() {
-        toolbar = (Toolbar) findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
-
-    }
 }
