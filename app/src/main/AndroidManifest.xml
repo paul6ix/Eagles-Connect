@@ -42,7 +42,6 @@
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".activities.YearBookActivity"
-
             android:label="Year book"
             android:screenOrientation="portrait" />
         <activity android:name=".activities.SplashActivity">
@@ -68,9 +67,7 @@
         <activity
             android:name=".activities.CreateForumActivity"
             android:label="Create Forum" />
-        <activity
-            android:name=".activities.EliteActivity"
-           ></activity>
+        <activity android:name=".activities.EliteActivity" />
     </application>
 
 </manifest>

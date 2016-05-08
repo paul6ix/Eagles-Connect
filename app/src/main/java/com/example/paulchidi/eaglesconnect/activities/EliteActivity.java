@@ -34,7 +34,7 @@ public class EliteActivity extends AppCompatActivity {
                 try {
                     sleep(5*1000);
                     Intent intent = new Intent(EliteActivity.this,WebViewActivity.class);
-                    intent.setData(Uri.parse("https://www.instagram.com/mide_wey/"));
+                    intent.setData(Uri.parse("https://www.google.com"));
                     startActivity(intent);
 
                 }

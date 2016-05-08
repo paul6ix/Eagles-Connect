@@ -22,6 +22,7 @@ import com.example.paulchidi.eaglesconnect.fragments.ForumFragment;
 import com.example.paulchidi.eaglesconnect.fragments.HelpFragment;
 import com.example.paulchidi.eaglesconnect.fragments.MainFragment;
 import com.example.paulchidi.eaglesconnect.fragments.ProfileFragment;
+import com.example.paulchidi.eaglesconnect.fragments.StatusFragment;
 import com.kinvey.android.Client;
 
 public class MainActivity extends AppCompatActivity
@@ -40,7 +41,7 @@ public class MainActivity extends AppCompatActivity
 
 
         //Set the fragment initially
-        MainFragment fragment = new MainFragment();
+        StatusFragment fragment = new StatusFragment();
         android.support.v4.app.FragmentTransaction fragmentTransaction =
                 getSupportFragmentManager().beginTransaction();
         fragmentTransaction.replace(R.id.fragment_container, fragment);
@@ -114,12 +115,6 @@ public class MainActivity extends AppCompatActivity
         }
 
 
-
-
-
-
-
-
         return super.onOptionsItemSelected(item);
     }
 
@@ -131,7 +126,7 @@ public class MainActivity extends AppCompatActivity
 
         if (id == R.id.nav_home) {
             //Set the fragment initially
-            MainFragment fragment = new MainFragment();
+            StatusFragment fragment = new StatusFragment();
             FragmentTransaction fragmentTransaction =
                     getSupportFragmentManager().beginTransaction();
             fragmentTransaction.replace(R.id.fragment_container, fragment);
