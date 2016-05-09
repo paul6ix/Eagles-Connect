@@ -23,7 +23,7 @@ public class SplashActivity extends Activity {
         Thread splash = new Thread() {
             public void run() {
                 try {
-                    sleep(1 * 1000);
+                    sleep(3 * 1000);
                     //After splash Display it logs in to the app
 
 
