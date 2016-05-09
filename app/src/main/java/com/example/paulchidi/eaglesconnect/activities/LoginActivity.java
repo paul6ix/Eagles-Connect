@@ -9,26 +9,22 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
-import com.example.paulchidi.eaglesconnect.EagleKinvey;
 import com.example.paulchidi.eaglesconnect.R;
-import com.kinvey.android.Client;
-import com.kinvey.android.callback.KinveyUserCallback;
-import com.kinvey.java.User;
+import com.parse.LogInCallback;
+import com.parse.ParseException;
+import com.parse.ParseUser;
 
 public class LoginActivity extends AppCompatActivity {
     protected TextView etSignup_link;
     protected EditText etUsername;
     protected EditText etPassword;
     protected Button btnLogin;
-    protected Client mKinveyClient;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
-        mKinveyClient = ((EagleKinvey) getApplication()).getmKinveyClient();
-
         //Declaration
         etUsername = (EditText) findViewById(R.id.editText_username);
         etPassword = (EditText) findViewById(R.id.editText_password);
@@ -58,40 +54,34 @@ public class LoginActivity extends AppCompatActivity {
 
     public void login() {
 
-
         String username = etUsername.getText().toString().trim();
         String password = etPassword.getText().toString().trim();
-
 
         if (username.isEmpty() || password.isEmpty()) {
             alertInfo();
         } else {
-            mKinveyClient.user().login(username, password, new KinveyUserCallback() {
+            ParseUser.logInInBackground(username, password, new LogInCallback() {
                 @Override
-                public void onSuccess(User user) {
+                public void done(ParseUser user, ParseException e) {
+                    if (e == null) {
                         Intent intentMain = new Intent(LoginActivity.this, MainActivity.class);
                         intentMain.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                         intentMain.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
                         startActivity(intentMain);
 
-                }
-
-                @Override
-                public void onFailure(Throwable throwable) {
+                    } else {
                         AlertDialog.Builder builder = new AlertDialog.Builder(LoginActivity.this);
-                    builder.setMessage(throwable.getMessage())
+                        builder.setMessage(e.getMessage())
                                 .setTitle("Information")
                                 .setPositiveButton(android.R.string.ok, null);
                         AlertDialog dialog = builder.create();
                         dialog.show();
-
+                    }
                 }
             });
         }
 
-
     }
-
 
     public void alertInfo() {
 

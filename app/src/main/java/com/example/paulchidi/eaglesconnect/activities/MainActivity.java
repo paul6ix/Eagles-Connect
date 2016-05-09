@@ -23,6 +23,7 @@ import com.example.paulchidi.eaglesconnect.fragments.HelpFragment;
 import com.example.paulchidi.eaglesconnect.fragments.ProfileFragment;
 import com.example.paulchidi.eaglesconnect.fragments.StatusFragment;
 import com.kinvey.android.Client;
+import com.parse.ParseUser;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
@@ -30,13 +31,13 @@ public class MainActivity extends AppCompatActivity
 
     NavigationView navigationView = null;
     Toolbar toolbar = null;
-    Client EagleUser;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        EagleUser = ((EagleKinvey) getApplication()).getmKinveyClient();
+
 
 
         //Set the fragment initially
@@ -48,9 +49,14 @@ public class MainActivity extends AppCompatActivity
 
         actionBar();
 
+        ParseUser currentUser = ParseUser.getCurrentUser();
 
-        if (EagleUser.user().isUserLoggedIn()) {
-            String user = EagleUser.user().getUsername();
+
+        if (currentUser != null) {
+            String user = currentUser.getUsername();
+
+
+
             View headerView = navigationView.getHeaderView(0);
             TextView emailText = (TextView) headerView.findViewById(R.id.email);
             emailText.setText("Class of 2015");
@@ -168,9 +174,9 @@ public class MainActivity extends AppCompatActivity
             transaction.commit();
         } else if (id == R.id.nav_logout) {
             //Logging out the user
-            EagleUser.user().logout().execute();
-            boolean currentUser = EagleUser.user().isUserLoggedIn();
-            if (!currentUser) {
+            ParseUser.logOut();
+            ParseUser currentUser = ParseUser.getCurrentUser();
+            if (currentUser == null) {
                 Intent intentLogin = new Intent(MainActivity.this, LoginActivity.class);
                 intentLogin.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
                 intentLogin.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
