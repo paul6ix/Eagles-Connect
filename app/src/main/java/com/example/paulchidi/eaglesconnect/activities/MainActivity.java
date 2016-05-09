@@ -20,7 +20,6 @@ import com.example.paulchidi.eaglesconnect.fragments.ArchiveFragment;
 import com.example.paulchidi.eaglesconnect.fragments.ContactsFragment;
 import com.example.paulchidi.eaglesconnect.fragments.ForumFragment;
 import com.example.paulchidi.eaglesconnect.fragments.HelpFragment;
-import com.example.paulchidi.eaglesconnect.fragments.MainFragment;
 import com.example.paulchidi.eaglesconnect.fragments.ProfileFragment;
 import com.example.paulchidi.eaglesconnect.fragments.StatusFragment;
 import com.kinvey.android.Client;
@@ -47,6 +46,23 @@ public class MainActivity extends AppCompatActivity
         fragmentTransaction.replace(R.id.fragment_container, fragment);
         fragmentTransaction.commit();
 
+        actionBar();
+
+
+        if (EagleUser.user().isUserLoggedIn()) {
+            String user = EagleUser.user().getUsername();
+            View headerView = navigationView.getHeaderView(0);
+            TextView emailText = (TextView) headerView.findViewById(R.id.email);
+            emailText.setText("Class of 2015");
+            tvUsername = (TextView) headerView.findViewById(R.id.username);
+            tvUsername.setText(user);
+        } else {
+            Intent intentLogin = new Intent(MainActivity.this, LoginActivity.class);
+            startActivity(intentLogin);
+        }
+    }
+
+    protected void actionBar() {
         toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
@@ -58,27 +74,8 @@ public class MainActivity extends AppCompatActivity
         toggle.syncState();
 
         navigationView = (NavigationView) findViewById(R.id.nav_view);
-
         //How to change elements in the header programatically
-
-
         navigationView.setNavigationItemSelectedListener(this);
-
-
-        if (EagleUser.user().isUserLoggedIn()) {
-            String user = EagleUser.user().getUsername();
-
-            View headerView = navigationView.getHeaderView(0);
-            TextView emailText = (TextView) headerView.findViewById(R.id.email);
-            emailText.setText("Class of 2015");
-            tvUsername = (TextView) headerView.findViewById(R.id.username);
-
-
-            tvUsername.setText(user);
-        } else {
-            Intent intentLogin = new Intent(MainActivity.this, LoginActivity.class);
-            startActivity(intentLogin);
-        }
     }
 
     @Override
@@ -173,7 +170,7 @@ public class MainActivity extends AppCompatActivity
             //Logging out the user
             EagleUser.user().logout().execute();
             boolean currentUser = EagleUser.user().isUserLoggedIn();
-            if (currentUser == false) {
+            if (!currentUser) {
                 Intent intentLogin = new Intent(MainActivity.this, LoginActivity.class);
                 intentLogin.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
                 intentLogin.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);

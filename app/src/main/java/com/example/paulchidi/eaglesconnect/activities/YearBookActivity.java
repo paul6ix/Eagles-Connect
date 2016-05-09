@@ -4,12 +4,10 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.view.Window;
 import android.widget.AdapterView;
 import android.widget.GridView;
-import android.widget.Toast;
 
 import com.example.paulchidi.eaglesconnect.R;
 import com.example.paulchidi.eaglesconnect.custom.CustomAdapter;
@@ -39,8 +37,7 @@ public class YearBookActivity extends AppCompatActivity {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 if (position == 0) {
-                    Toast toast = Toast.makeText(YearBookActivity.this, "it worked", Toast.LENGTH_LONG);
-                    toast.show();
+                    startActivity(new Intent(YearBookActivity.this, MainBookActivity.class));
                 } else if (position == 1) {
                     startActivity(new Intent(YearBookActivity.this, EliteActivity.class));
                 }
