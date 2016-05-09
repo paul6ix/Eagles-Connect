@@ -28,9 +28,5 @@ public class StatusFragment extends Fragment {
         return inflater.inflate(R.layout.fragment_status, container, false);
     }
 
-    @Override
-    public void onActivityCreated(Bundle savedInstanceState) {
-        super.onActivityCreated(savedInstanceState);
 
-    }
 }
