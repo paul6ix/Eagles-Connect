@@ -4,6 +4,9 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.Toolbar;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.Window;
 import android.widget.AdapterView;
@@ -25,6 +28,7 @@ public class YearBookActivity extends AppCompatActivity {
     Context context;
     ArrayList names;
     Window window;
+    Toolbar toolbar;
 
 
     @Override
@@ -33,6 +37,11 @@ public class YearBookActivity extends AppCompatActivity {
         setContentView(R.layout.activity_year_book);
         gvYearbook = (GridView) findViewById(R.id.gridView_yearbook);
         gvYearbook.setAdapter(new CustomAdapter(this, nameList, images));
+        toolbar = (Toolbar) findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setHomeButtonEnabled(true);
+
         gvYearbook.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
@@ -44,5 +53,7 @@ public class YearBookActivity extends AppCompatActivity {
             }
         });
     }
+
+
 
 }

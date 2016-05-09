@@ -2,6 +2,7 @@
 <resources>
     <color name="colorPrimary">#610862</color>
     <color name="colorPrimaryDark">#39053A</color>
+    <color name="ella_color">#FFD7CAD9</color>
     <color name="colorAccent">#874188</color>
     <color name="white">#ffffff</color>
     <color name="gray_light">#e8e8e8</color>

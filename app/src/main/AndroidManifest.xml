@@ -43,7 +43,6 @@
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".activities.YearBookActivity"
-            android:label="Year book"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar">
             <meta-data
