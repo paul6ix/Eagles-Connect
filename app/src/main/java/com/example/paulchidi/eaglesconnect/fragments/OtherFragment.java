@@ -3,27 +3,27 @@ package com.example.paulchidi.eaglesconnect.fragments;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.ListFragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ArrayAdapter;
+import android.widget.ListView;
 import android.widget.TextView;
 
-import com.example.paulchidi.eaglesconnect.EagleKinvey;
 import com.example.paulchidi.eaglesconnect.R;
-import com.kinvey.android.Client;
 
 
 /**
  * A simple {@link } subclass.
  */
-public class ProfileFragment extends Fragment {
+public class OtherFragment extends Fragment {
     TextView tvName;
-   TextView btnBio;
+    TextView btnBio;
     TextView btnImages;
     TextView btnOther;
 
-
-    public ProfileFragment() {
+    public OtherFragment() {
         // Required empty public constructor
     }
 
@@ -31,24 +31,22 @@ public class ProfileFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-
         // Inflate the layout for this fragment
-        View rootView = inflater.inflate(R.layout.fragment_profile, container, false);
-       tvName = (TextView) rootView.findViewById(R.id.textView_name);
+    View rootView =  inflater.inflate(R.layout.fragment_other, container, false);
         btnBio = (TextView) rootView.findViewById(R.id.textbutton_bio);
         btnImages = (TextView) rootView.findViewById(R.id.textbutton_images);
         btnOther = (TextView) rootView.findViewById(R.id.textbutton_other);
         btnBio.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                ImagesFragment fragment = new ImagesFragment();
+             BioFragment fragment = new BioFragment();
                 android.support.v4.app.FragmentTransaction fragmentTransaction =
                         getFragmentManager().beginTransaction();
                 fragmentTransaction.replace(R.id.fragment_container, fragment);
                 fragmentTransaction.commit();
             }
         });
-      btnImages.setOnClickListener(new View.OnClickListener() {
+        btnImages.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 ImagesFragment fragment = new ImagesFragment();
@@ -61,7 +59,7 @@ public class ProfileFragment extends Fragment {
         btnOther.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-               OtherFragment fragment = new OtherFragment();
+                OtherFragment fragment = new OtherFragment();
                 android.support.v4.app.FragmentTransaction fragmentTransaction =
                         getFragmentManager().beginTransaction();
                 fragmentTransaction.replace(R.id.fragment_container, fragment);
@@ -73,6 +71,6 @@ public class ProfileFragment extends Fragment {
 
         return rootView;
     }
+    }
 
 
-}
