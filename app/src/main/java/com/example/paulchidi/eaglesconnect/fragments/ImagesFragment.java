@@ -56,7 +56,7 @@ public class ImagesFragment extends Fragment {
                 return imageView;
             }
         });
-        
+
         btnNext.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
