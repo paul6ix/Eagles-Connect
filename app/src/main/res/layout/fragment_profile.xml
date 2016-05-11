@@ -3,10 +3,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:layout_marginTop="54dp"
-    android:background="@color/colorPrimaryDark"
+    android:background="@color/white"
     tools:context="com.example.paulchidi.eaglesconnect.ProfileFragment">
-
-
 
 
     <ImageView
@@ -27,7 +25,7 @@
         android:layout_toRightOf="@+id/imageView_profilepix"
         android:text="Ekpoki Naomi"
         android:textAppearance="?android:attr/textAppearanceLarge"
-        android:textColor="@color/white"
+        android:textColor="@color/black"
         android:textStyle="bold"
         android:typeface="monospace" />
 
@@ -41,7 +39,7 @@
         android:padding="@dimen/pad_5dp"
         android:text="Jos,Nigeria"
         android:textAppearance="?android:attr/textAppearanceMedium"
-        android:textColor="@color/white" />
+        android:textColor="@color/black" />
 
     <TextView
         android:id="@+id/textView_class"
@@ -53,7 +51,7 @@
         android:padding="@dimen/pad_5dp"
         android:text="Class of 2018"
         android:textAppearance="?android:attr/textAppearanceMedium"
-        android:textColor="@color/white"
+        android:textColor="@color/black"
         android:typeface="monospace" />
 
     <Button
@@ -88,7 +86,7 @@
         android:padding="@dimen/pad_10dp"
         android:text="Entry Year:"
         android:textAppearance="?android:attr/textAppearanceMedium"
-        android:textColor="@color/white" />
+        android:textColor="@color/black" />
 
     <TextView
         android:id="@+id/textView2"
@@ -100,7 +98,7 @@
         android:padding="@dimen/pad_10dp"
         android:text="Course studied:"
         android:textAppearance="?android:attr/textAppearanceMedium"
-        android:textColor="@color/white" />
+        android:textColor="@color/black" />
 
     <TextView
         android:id="@+id/textView5"
@@ -112,7 +110,7 @@
         android:padding="@dimen/pad_10dp"
         android:text="Occupation:"
         android:textAppearance="?android:attr/textAppearanceMedium"
-        android:textColor="@color/white" />
+        android:textColor="@color/black" />
 
     <TextView
         android:id="@+id/textView6"
@@ -124,7 +122,7 @@
         android:padding="@dimen/pad_10dp"
         android:text="Email:"
         android:textAppearance="?android:attr/textAppearanceMedium"
-        android:textColor="@color/white" />
+        android:textColor="@color/black" />
 
     <TextView
         android:id="@+id/textView7"
@@ -136,7 +134,7 @@
         android:padding="@dimen/pad_10dp"
         android:text="Phone Number:"
         android:textAppearance="?android:attr/textAppearanceMedium"
-        android:textColor="@color/white" />
+        android:textColor="@color/black" />
 
     <TextView
         android:id="@+id/textView8"
@@ -148,7 +146,7 @@
         android:padding="@dimen/pad_10dp"
         android:text="2013"
         android:textAppearance="?android:attr/textAppearanceMedium"
-        android:textColor="@color/white" />
+        android:textColor="@color/black" />
 
     <TextView
         android:id="@+id/textView9"
@@ -160,7 +158,7 @@
         android:padding="@dimen/pad_10dp"
         android:text="ICE"
         android:textAppearance="?android:attr/textAppearanceMedium"
-        android:textColor="@color/white" />
+        android:textColor="@color/black" />
 
     <TextView
         android:id="@+id/textView10"
@@ -173,7 +171,7 @@
         android:padding="@dimen/pad_10dp"
         android:text="Structural designer"
         android:textAppearance="?android:attr/textAppearanceMedium"
-        android:textColor="@color/white" />
+        android:textColor="@color/black" />
 
     <TextView
         android:id="@+id/textView11"
@@ -186,7 +184,7 @@
         android:padding="@dimen/pad_10dp"
         android:text="naomi.e@gmail.com"
         android:textAppearance="?android:attr/textAppearanceMedium"
-        android:textColor="@color/white" />
+        android:textColor="@color/black" />
 
     <TextView
         android:id="@+id/textView12"
@@ -198,43 +196,66 @@
         android:padding="@dimen/pad_10dp"
         android:text="+2347030233123"
         android:textAppearance="?android:attr/textAppearanceMedium"
-        android:textColor="@color/white" />
+        android:textColor="@color/black" />
 
-    <TextView
-        android:layout_width="wrap_content"
+    <android.support.v7.widget.CardView
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceSmall"
-        android:text="ABOUT"
-        android:textStyle="bold"
-        android:id="@+id/textbutton_bio"
+
         android:layout_below="@+id/button_add"
-        android:textColor="@color/main_color_green"
-        android:layout_toLeftOf="@+id/textView10"
-        android:layout_toStartOf="@+id/textView10" />
+        android:focusableInTouchMode="false"
+        android:singleLine="false">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceSmall"
-        android:text="IMAGES"
-        android:textColor="@color/main_color_green"
-        android:textStyle="bold"
-        android:id="@+id/textbutton_images"
-        android:layout_below="@+id/button_add"
-        android:layout_centerHorizontal="true" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:orientation="horizontal"
+            android:background="@color/colorPrimary">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceSmall"
-        android:text="OTHER"
-        android:id="@+id/textbutton_other"
-        android:textColor="@color/main_color_green"
-        android:textStyle="bold"
-        android:layout_below="@+id/button_msg"
-        android:layout_alignLeft="@+id/textView"
-        android:layout_alignStart="@+id/textView" />
+            <TextView
+                android:id="@+id/textbutton_bio"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/button_add"
+                android:layout_toLeftOf="@+id/textView10"
+                android:layout_toStartOf="@+id/textView10"
+                android:padding="@dimen/pad_10dp"
+                android:layout_marginLeft="90dp"
+                android:text="ABOUT"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:textColor="@color/white"
+                android:textStyle="bold" />
 
+            <TextView
+                android:id="@+id/textbutton_images"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/button_add"
+                android:layout_centerHorizontal="true"
+                android:padding="@dimen/pad_10dp"
+                android:text="IMAGES"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:textColor="@color/white"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/textbutton_other"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignLeft="@+id/textView"
+                android:layout_alignStart="@+id/textView"
+                android:layout_below="@+id/button_msg"
+                android:padding="@dimen/pad_10dp"
+                android:text="OTHER"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:textColor="@color/white"
+                android:textStyle="bold" />
+
+
+        </LinearLayout>
+
+    </android.support.v7.widget.CardView>
 
 
 </RelativeLayout>

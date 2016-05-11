@@ -20,6 +20,7 @@ import com.example.paulchidi.eaglesconnect.activities.CreateForumActivity;
 public class ForumFragment extends Fragment {
     protected Button btnNewForum;
     protected Button btnDisForum;
+    protected  Button btndiscover;
 
 
 
@@ -35,6 +36,14 @@ public class ForumFragment extends Fragment {
         View rootView = inflater.inflate(R.layout.fragment_forum, container, false);
         btnNewForum = (Button) rootView.findViewById(R.id.button_new_forum);
         btnDisForum = (Button) rootView.findViewById(R.id.button_discover_forum);
+        btndiscover = (Button) rootView.findViewById(R.id.button_discover);
+        btndiscover.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getActivity(), DiscoverForumActivity.class);
+                startActivity(intent);
+            }
+        });
         btnDisForum.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
