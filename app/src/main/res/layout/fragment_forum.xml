@@ -3,7 +3,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:layout_marginTop="54dp"
-    android:background="@color/colorPrimaryDark"
+    android:background="@color/white"
     tools:context="com.compscitutorials.basigarcia.navigationdrawervideotutorial.Forumfragment">
 
 
@@ -15,13 +15,15 @@
         android:layout_centerVertical="true"
         android:text="You aren't in any forum yet"
         android:textAppearance="?android:attr/textAppearanceLarge"
-        android:textColor="@color/green_btn_color" />
+        android:textColor="@color/black" />
 
     <Button
         android:id="@+id/button_discover_forum"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/textView4"
+        android:background="@drawable/buttontheme"
+        android:textColor="@color/white"
 
         android:layout_centerHorizontal="true"
         android:text="Discover and join" />
@@ -31,6 +33,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
+        android:background="@drawable/buttontheme"
+        android:textColor="@color/white"
         android:layout_marginTop="36dp"
         android:layout_toLeftOf="@+id/button_discover_forum"
         android:layout_toStartOf="@+id/button_discover_forum"
@@ -39,6 +43,8 @@
     <Button
         android:id="@+id/button_discover"
         android:layout_width="wrap_content"
+        android:background="@drawable/buttontheme"
+        android:textColor="@color/white"
         android:layout_height="wrap_content"
         android:layout_alignTop="@+id/button2"
         android:layout_centerHorizontal="true"
@@ -46,6 +52,8 @@
 
     <Button
         android:id="@+id/button_new_forum"
+        android:background="@drawable/buttontheme"
+        android:textColor="@color/white"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignTop="@+id/button_discover"

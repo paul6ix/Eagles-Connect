@@ -3,11 +3,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/colorPrimaryDark"
-    android:paddingBottom="@dimen/activity_vertical_margin"
-    android:paddingLeft="@dimen/activity_horizontal_margin"
-    android:paddingRight="@dimen/activity_horizontal_margin"
-    android:paddingTop="@dimen/activity_vertical_margin"
+    android:background="@color/white"
+
     tools:context="com.example.paulchidi.eaglesconnect.activities.CreateForumActivity">
 
     <EditText
@@ -18,8 +15,8 @@
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
         android:hint="Forum Name"
-        android:textColor="#6effffff"
-        android:textColorHint="#ffffff" />
+        android:textColor="@color/black"
+        android:textColorHint="@color/black" />
 
     <EditText
         android:id="@+id/editText_about_forum"
@@ -32,9 +29,9 @@
         android:ems="10"
         android:hint="About Forum"
         android:inputType="textMultiLine"
-        android:textColor="#6effffff"
+        android:textColor="@color/black"
 
-        android:textColorHint="#ffffff" />
+        android:textColorHint="@color/black" />
 
     <EditText
         android:id="@+id/editText_forum_email"
@@ -46,8 +43,8 @@
         android:layout_marginTop="25dp"
         android:hint="Initiator's Email"
         android:inputType="textEmailAddress"
-        android:textColor="#6effffff"
-        android:textColorHint="#ffffff" />
+        android:textColor="@color/black"
+        android:textColorHint="@color/black" />
 
     <EditText
         android:id="@+id/editText_forum_website"
@@ -58,14 +55,16 @@
         android:layout_below="@+id/editText_forum_email"
         android:hint="Forum's Website"
         android:inputType="textUri"
-        android:textColor="#6effffff"
-        android:textColorHint="#ffffff" />
+        android:textColor="@color/black"
+        android:textColorHint="@color/black" />
 
     <Button
         android:id="@+id/button_create_f"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
+        android:background="@drawable/buttontheme"
+        android:textColor="@color/white"
         android:layout_alignParentStart="true"
         android:layout_below="@+id/editText_forum_website"
         android:layout_marginTop="68dp"
@@ -73,10 +72,12 @@
 
     <Button
         android:id="@+id/button_cancel"
+        android:textColor="@color/white"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignBottom="@+id/button_create_f"
         android:layout_alignParentEnd="true"
+        android:background="@drawable/buttontheme"
         android:layout_alignParentRight="true"
         android:layout_marginEnd="51dp"
         android:layout_marginRight="51dp"
