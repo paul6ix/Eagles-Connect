@@ -18,7 +18,7 @@
         android:textColor="@color/green_btn_color" />
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/button_discover_forum"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/textView4"
@@ -32,8 +32,8 @@
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
         android:layout_marginTop="36dp"
-        android:layout_toLeftOf="@+id/button"
-        android:layout_toStartOf="@+id/button"
+        android:layout_toLeftOf="@+id/button_discover_forum"
+        android:layout_toStartOf="@+id/button_discover_forum"
         android:text="Forums" />
 
     <Button
@@ -49,8 +49,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignTop="@+id/button3"
-        android:layout_toEndOf="@+id/button"
-        android:layout_toRightOf="@+id/button"
+        android:layout_toEndOf="@+id/button_discover_forum"
+        android:layout_toRightOf="@+id/button_discover_forum"
         android:text="new forum" />
 
 </RelativeLayout>

@@ -7,6 +7,8 @@ import android.support.v4.app.ListFragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ImageButton;
@@ -14,6 +16,7 @@ import android.widget.ImageSwitcher;
 import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
+import android.widget.Toast;
 import android.widget.ViewSwitcher;
 
 import com.example.paulchidi.eaglesconnect.R;
@@ -29,7 +32,6 @@ public class ImagesFragment extends Fragment {
     TextView btnOther;
     ImageSwitcher switcher;
     ImageButton btnNext, btnPrev;
-
 
 
     public ImagesFragment() {
@@ -51,21 +53,29 @@ public class ImagesFragment extends Fragment {
         switcher.setFactory(new ViewSwitcher.ViewFactory() {
             @Override
             public View makeView() {
-                ImageView imageView  = new ImageView(getActivity());
+                ImageView imageView = new ImageView(getContext());
                 imageView.setScaleType(ImageView.ScaleType.FIT_CENTER);
                 return imageView;
             }
         });
-
+        Animation in = AnimationUtils.loadAnimation(getActivity(), android.R.anim.slide_in_left);
+        Animation out = AnimationUtils.loadAnimation(getActivity(), android.R.anim.slide_out_right);
+        switcher.setInAnimation(in);
+        switcher.setOutAnimation(out);
+        switcher.setImageResource(R.drawable.cuimg);
         btnNext.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                switcher.setImageResource(R.drawable.omi_p);
+                Toast.makeText(getActivity(), "Next image", Toast.LENGTH_SHORT).show();
 
             }
         });
         btnPrev.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                switcher.setImageResource(R.drawable.alumni);
+                Toast.makeText(getActivity(), "Previous image", Toast.LENGTH_SHORT).show();
 
             }
         });
@@ -100,7 +110,6 @@ public class ImagesFragment extends Fragment {
                 fragmentTransaction.commit();
             }
         });
-
 
 
         return rootView;

@@ -9,6 +9,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 
+import com.example.paulchidi.eaglesconnect.activities.DiscoverForumActivity;
 import com.example.paulchidi.eaglesconnect.R;
 import com.example.paulchidi.eaglesconnect.activities.CreateForumActivity;
 
@@ -18,6 +19,7 @@ import com.example.paulchidi.eaglesconnect.activities.CreateForumActivity;
  */
 public class ForumFragment extends Fragment {
     protected Button btnNewForum;
+    protected Button btnDisForum;
 
 
 
@@ -32,6 +34,14 @@ public class ForumFragment extends Fragment {
         // Inflate the layout for this fragment
         View rootView = inflater.inflate(R.layout.fragment_forum, container, false);
         btnNewForum = (Button) rootView.findViewById(R.id.button_new_forum);
+        btnDisForum = (Button) rootView.findViewById(R.id.button_discover_forum);
+        btnDisForum.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent =  new Intent(getActivity(), DiscoverForumActivity.class);
+                startActivity(intent);
+            }
+        });
         btnNewForum.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

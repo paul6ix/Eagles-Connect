@@ -147,10 +147,10 @@ public class MainActivity extends AppCompatActivity
 
             Intent intentYearbook = new Intent(this, YearBookActivity.class);
             startActivity(intentYearbook);
-        } else if (id == R.id.nav_settings) {
+        } /*else if (id == R.id.nav_settings) {
 
 
-        } else if (id == R.id.nav_contacts) {
+        } */else if (id == R.id.nav_contacts) {
             ContactsFragment fragment = new ContactsFragment();
             FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
             fragmentTransaction.replace(R.id.fragment_container, fragment);

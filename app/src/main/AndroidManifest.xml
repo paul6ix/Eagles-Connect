@@ -48,10 +48,7 @@
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".activities.MainActivity" />
-
         </activity>
-
-
         <activity android:name=".activities.SplashActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -79,6 +76,9 @@
             android:name=".activities.EliteActivity"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".activities.MainBookActivity" />
+        <activity android:name=".activities.DiscoverForumActivity"
+            android:label="Discover Forum"
+            ></activity>
     </application>
 
 </manifest>

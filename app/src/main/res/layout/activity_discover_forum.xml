@@ -1,0 +1,249 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v4.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/ella_color"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context="com.example.paulchidi.eaglesconnect.activities.ScrollingActivity">
+
+    <LinearLayout
+
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+
+        >
+
+        <android.support.v7.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="200dp">
+
+            <ImageView
+                android:id="@+id/imageView_forum"
+                android:layout_width="70dp"
+                android:layout_height="70dp"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="2dp"
+                android:layout_marginStart="2dp"
+                android:scaleType="fitCenter"
+                android:src="@drawable/forum" />
+
+
+            <TextView
+                android:id="@+id/textView_forum"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="100dp"
+                android:text="Eagles Summit Forum"
+
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:textColor="@color/black" />
+            <TextView
+                android:id="@+id/textView_members"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingTop="30dp"
+                android:layout_marginLeft="100dp"
+                android:text="1000 Members"
+
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:textColor="@color/black" />
+            <TextView
+                android:id="@+id/textView_about"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingTop="60dp"
+                android:layout_marginLeft="100dp"
+                android:text="The CUALA Annual Eagles Summit is strictly for all graduates of Covenant University. It is therefore not an open event to the general public."
+
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:textColor="@color/black" />
+            <CheckBox
+                android:layout_marginTop="170dp"
+                android:layout_marginRight="@dimen/pad_10dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Join"
+                android:id="@+id/checkBox"
+                android:layout_gravity="end" />
+
+        </android.support.v7.widget.CardView>
+        <android.support.v7.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="200dp">
+
+            <ImageView
+                android:id="@+id/imageView_forum1"
+                android:layout_width="70dp"
+                android:layout_height="70dp"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="2dp"
+                android:layout_marginStart="2dp"
+                android:scaleType="fitCenter"
+                android:src="@drawable/aeies" />
+
+
+            <TextView
+                android:id="@+id/textView_forum1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="100dp"
+                android:text="AEIES Forum"
+
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:textColor="@color/black" />
+            <TextView
+                android:id="@+id/textView_members1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingTop="30dp"
+                android:layout_marginLeft="100dp"
+                android:text="200 Members"
+
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:textColor="@color/black" />
+            <TextView
+                android:id="@+id/textView_about1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingTop="60dp"
+                android:layout_marginLeft="100dp"
+                android:text="The vision of AEIES is to create an avenue to acquire theoretical and practical knowledge outside the classroom"
+
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:textColor="@color/black" />
+            <CheckBox
+                android:layout_marginTop="170dp"
+                android:layout_marginRight="@dimen/pad_10dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Join"
+                android:id="@+id/checkBox1"
+                android:layout_gravity="end" />
+
+        </android.support.v7.widget.CardView>
+        <android.support.v7.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="200dp">
+
+            <ImageView
+                android:id="@+id/imageView_forum2"
+                android:layout_width="70dp"
+                android:layout_height="70dp"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="2dp"
+                android:layout_marginStart="2dp"
+                android:scaleType="fitCenter"
+                android:src="@drawable/hope" />
+
+
+            <TextView
+                android:id="@+id/textView_forum2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="100dp"
+                android:text="Hope foundation"
+
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:textColor="@color/black" />
+            <TextView
+                android:id="@+id/textView_members2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingTop="30dp"
+                android:layout_marginLeft="100dp"
+                android:text="500 Members"
+
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:textColor="@color/black" />
+            <TextView
+                android:id="@+id/textView_about2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingTop="60dp"
+                android:layout_marginLeft="100dp"
+                android:text="It's all about Helping  Other People Excel"
+
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:textColor="@color/black" />
+            <CheckBox
+                android:layout_marginTop="170dp"
+                android:layout_marginRight="@dimen/pad_10dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Join"
+                android:id="@+id/checkBox2"
+                android:layout_gravity="end" />
+
+        </android.support.v7.widget.CardView>
+        <android.support.v7.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="200dp">
+
+            <ImageView
+                android:id="@+id/imageView_forum3"
+                android:layout_width="70dp"
+                android:layout_height="70dp"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="2dp"
+                android:layout_marginStart="2dp"
+                android:scaleType="fitCenter"
+                android:src="@drawable/creative" />
+
+
+            <TextView
+                android:id="@+id/textView_forum3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="100dp"
+                android:text="Creative Thinkers"
+
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:textColor="@color/black" />
+            <TextView
+                android:id="@+id/textView_members3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingTop="30dp"
+                android:layout_marginLeft="100dp"
+                android:text="250 Members"
+
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:textColor="@color/black" />
+            <TextView
+                android:id="@+id/textView_about3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingTop="60dp"
+                android:layout_marginLeft="100dp"
+                android:text="The creative thinkers: Inspire through creativity"
+
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:textColor="@color/black" />
+            <CheckBox
+                android:layout_marginTop="170dp"
+                android:layout_marginRight="@dimen/pad_10dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Join"
+                android:id="@+id/checkBox3"
+                android:layout_gravity="end" />
+
+        </android.support.v7.widget.CardView>
+
+
+
+    </LinearLayout>
+
+
+</android.support.v4.widget.NestedScrollView>

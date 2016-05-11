@@ -23,10 +23,10 @@
             android:id="@+id/nav_archive"
             android:icon="@android:drawable/ic_menu_more"
             android:title="Archive" />
-        <item
+    <!--    <item
             android:id="@+id/nav_settings"
             android:icon="@android:drawable/ic_menu_manage"
-            android:title="Settings" />
+            android:title="Settings" />-->
     </group>
 
     <item android:title="Communicate">
