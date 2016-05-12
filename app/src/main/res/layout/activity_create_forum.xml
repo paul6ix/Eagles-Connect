@@ -63,23 +63,23 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
-        android:background="@drawable/buttontheme"
-        android:textColor="@color/white"
         android:layout_alignParentStart="true"
         android:layout_below="@+id/editText_forum_website"
         android:layout_marginTop="68dp"
-        android:text="Create Forum" />
+        android:background="@drawable/buttontheme"
+        android:text="Create"
+        android:textColor="@color/white" />
 
     <Button
         android:id="@+id/button_cancel"
-        android:textColor="@color/white"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignBottom="@+id/button_create_f"
         android:layout_alignParentEnd="true"
-        android:background="@drawable/buttontheme"
         android:layout_alignParentRight="true"
         android:layout_marginEnd="51dp"
         android:layout_marginRight="51dp"
-        android:text="Cancel" />
+        android:background="@drawable/buttontheme"
+        android:text="Cancel"
+        android:textColor="@color/white" />
 </RelativeLayout>
