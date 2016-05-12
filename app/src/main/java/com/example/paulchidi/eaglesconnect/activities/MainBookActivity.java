@@ -1,6 +1,7 @@
 package com.example.paulchidi.eaglesconnect.activities;
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.Window;
@@ -12,12 +13,12 @@ import com.example.paulchidi.eaglesconnect.custom.MainAdapter;
 import java.util.ArrayList;
 
 public class MainBookActivity extends AppCompatActivity {
-    public static String[] nameList = {"Yomi adedeji", "Emanuella Ekpoki", "Naomi Ekpoki",
-            "Fadugba Muyiwa", "Eze Azubuike", "Abayomi Issac"
+    public static String[] nameList = {"Yomi adedeji", "Ike cynthia", "Naomi Ekpoki",
+            "Fadugba Muyiwa", "Fifoluwa ade", "Abayomi Faith"
 
     };
-    public static int[] images = {R.drawable.avatar_empty, R.drawable.avatar_empty, R.drawable.avatar_empty,
-            R.drawable.avatar_empty, R.drawable.avatar_empty, R.drawable.avatar_empty,};
+    public static int[] images = {R.drawable.yomi, R.drawable.profile1, R.drawable.omi_p,
+            R.drawable.fadugba, R.drawable.fifo, R.drawable.profile2,};
     protected GridView gvYearbook;
     Context context;
     ArrayList names;
@@ -33,4 +34,9 @@ public class MainBookActivity extends AppCompatActivity {
 
     }
 
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        startActivity(new Intent(MainBookActivity.this,MainActivity.class));
+    }
 }

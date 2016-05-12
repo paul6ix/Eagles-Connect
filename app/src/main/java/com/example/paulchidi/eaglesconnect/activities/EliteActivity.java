@@ -22,6 +22,8 @@ public class EliteActivity extends AppCompatActivity {
                 try {
                     sleep(5 * 1000);
                     Intent intent = new Intent(EliteActivity.this, MainBookActivity.class);
+                    intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
+                    intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                     startActivity(intent);
 
                 } catch (Exception e) {

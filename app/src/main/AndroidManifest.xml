@@ -78,7 +78,10 @@
         <activity android:name=".activities.MainBookActivity" />
         <activity android:name=".activities.DiscoverForumActivity"
             android:label="Discover Forum"
-            ></activity>
+            android:theme="@style/AppTheme.NoActionBar"
+            >
+
+    </activity>
     </application>
 
 </manifest>
