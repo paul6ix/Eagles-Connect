@@ -6,7 +6,10 @@ import android.view.View;
 import android.view.View.OnClickListener;
 
 import com.example.paulchidi.eaglesconnect.R;
+import com.example.paulchidi.eaglesconnect.fragments.ProfileFragment;
 import com.example.paulchidi.eaglesconnect.utils.TouchEffect;
+
+import de.hdodenhof.circleimageview.CircleImageView;
 
 /**
  * This is a common activity that all other activities of the app can extend to
@@ -28,6 +31,7 @@ public class CustomActivity extends FragmentActivity implements OnClickListener 
     public void setContentView(int layoutResID) {
         super.setContentView(layoutResID);
         setupActionBar();
+
     }
 
     /**
@@ -80,9 +84,10 @@ public class CustomActivity extends FragmentActivity implements OnClickListener 
 
     /* (non-Javadoc)
      * @see android.view.View.OnClickListener#onClick(android.view.View)
-     */
-    @Override
+     */@Override
     public void onClick(View v) {
 
+
     }
+
 }

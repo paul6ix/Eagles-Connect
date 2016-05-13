@@ -15,7 +15,8 @@
         android:layout_marginLeft="24dp"
         android:layout_marginStart="24dp"
         android:src="@drawable/omi_p"
-        app:border_color="#FF000000" />
+        app:border_color="#FF000000"
+        android:onClick="onClick" />
 
     <TextView
         android:id="@+id/username"

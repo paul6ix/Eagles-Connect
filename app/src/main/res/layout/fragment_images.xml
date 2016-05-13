@@ -67,7 +67,7 @@
         android:textColor="@color/white"
         android:layout_below="@+id/imageView_profilepix"
         android:layout_marginLeft="100dp"
-        android:text="+ add" />
+        android:text="Connect" />
 
     <Button
 

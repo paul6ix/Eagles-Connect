@@ -1,6 +1,10 @@
 package com.example.paulchidi.eaglesconnect.activities;
 
+import android.app.Notification;
+import android.app.NotificationManager;
 import android.content.Intent;
+import android.media.RingtoneManager;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.design.widget.NavigationView;
 import android.support.v4.app.FragmentTransaction;
@@ -14,6 +18,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.TextView;
 
+import com.example.paulchidi.eaglesconnect.Chat;
 import com.example.paulchidi.eaglesconnect.EagleKinvey;
 import com.example.paulchidi.eaglesconnect.R;
 import com.example.paulchidi.eaglesconnect.fragments.ArchiveFragment;
@@ -25,18 +30,22 @@ import com.example.paulchidi.eaglesconnect.fragments.StatusFragment;
 import com.kinvey.android.Client;
 import com.parse.ParseUser;
 
+import de.hdodenhof.circleimageview.CircleImageView;
+
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
     protected TextView tvUsername;
 
     NavigationView navigationView = null;
     Toolbar toolbar = null;
+    CircleImageView prof;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        prof = (CircleImageView) findViewById(R.id.profile_image);
 
 
 
@@ -59,7 +68,7 @@ public class MainActivity extends AppCompatActivity
 
             View headerView = navigationView.getHeaderView(0);
             TextView emailText = (TextView) headerView.findViewById(R.id.email);
-            emailText.setText("Class of 2015");
+            emailText.setText("Class of 2018");
             tvUsername = (TextView) headerView.findViewById(R.id.username);
             tvUsername.setText(user);
         } else {
@@ -116,6 +125,18 @@ public class MainActivity extends AppCompatActivity
             startActivity(intentEditContacts);
 
         }
+        else if (id == R.id.action_notify){
+            Uri sound = RingtoneManager.getDefaultUri(RingtoneManager.TYPE_NOTIFICATION);
+            Notification.Builder notify = new Notification.Builder(MainActivity.this);
+            notify.setContentTitle("New Message");
+            notify.setContentText("Fadugba Messaged You");
+            notify.setSound(sound);
+            Notification notification = notify.build();
+            NotificationManager manager = (NotificationManager) getSystemService(NOTIFICATION_SERVICE);
+            manager.notify(0,notification);
+
+
+        }
 
 
         return super.onOptionsItemSelected(item);
@@ -147,10 +168,11 @@ public class MainActivity extends AppCompatActivity
 
             Intent intentYearbook = new Intent(this, YearBookActivity.class);
             startActivity(intentYearbook);
-        } /*else if (id == R.id.nav_settings) {
+        } else if (id == R.id.nav_class) {
 
 
-        } */else if (id == R.id.nav_contacts) {
+
+        } else if (id == R.id.nav_contacts) {
             ContactsFragment fragment = new ContactsFragment();
             FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
             fragmentTransaction.replace(R.id.fragment_container, fragment);
@@ -192,4 +214,20 @@ public class MainActivity extends AppCompatActivity
         drawer.closeDrawer(GravityCompat.START);
         return true;
     }
-}
+
+      public void onClick(View v) {
+        ProfileFragment fragment = new ProfileFragment();
+        android.support.v4.app.FragmentTransaction fragmentTransaction =
+                getSupportFragmentManager().beginTransaction();
+        fragmentTransaction.replace(R.id.fragment_container, fragment);
+        fragmentTransaction.commit();
+          DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+          if (drawer.isDrawerOpen(GravityCompat.START)) {
+              drawer.closeDrawer(GravityCompat.START);
+          }
+
+
+    }
+    }
+
+

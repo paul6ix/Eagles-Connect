@@ -12,7 +12,7 @@
             android:title="Profile" />
         <item
             android:id="@+id/nav_yearbook"
-            android:icon="@drawable/groups"
+            android:icon="@drawable/book"
             android:title="Yearbook" />
         <item
             android:id="@+id/nav_forum"
@@ -23,10 +23,10 @@
             android:id="@+id/nav_archive"
             android:icon="@android:drawable/ic_menu_more"
             android:title="Archive" />
-    <!--    <item
-            android:id="@+id/nav_settings"
-            android:icon="@android:drawable/ic_menu_manage"
-            android:title="Settings" />-->
+       <item
+            android:id="@+id/nav_class"
+            android:icon="@drawable/groups"
+            android:title="Classroom" />
     </group>
 
     <item android:title="Communicate">

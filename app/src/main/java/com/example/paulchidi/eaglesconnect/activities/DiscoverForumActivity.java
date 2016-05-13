@@ -3,6 +3,7 @@ package com.example.paulchidi.eaglesconnect.activities;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.view.MenuItem;
 
 import com.example.paulchidi.eaglesconnect.R;
 
@@ -22,7 +23,11 @@ public class DiscoverForumActivity extends AppCompatActivity {
     }
 
     @Override
-    public void onBackPressed() {
-        super.onBackPressed();
+    public boolean onOptionsItemSelected(MenuItem item) {
+        int id =  item.getItemId();
+        if (id == android.R.id.home){
+            finish();
+        }
+        return super.onOptionsItemSelected(item);
     }
 }
