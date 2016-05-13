@@ -2,6 +2,7 @@ package com.example.paulchidi.eaglesconnect.activities;
 
 import android.app.Notification;
 import android.app.NotificationManager;
+import android.app.PendingIntent;
 import android.content.Intent;
 import android.media.RingtoneManager;
 import android.net.Uri;
@@ -12,6 +13,7 @@ import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.app.NotificationCompat;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -48,7 +50,6 @@ public class MainActivity extends AppCompatActivity
         prof = (CircleImageView) findViewById(R.id.profile_image);
 
 
-
         //Set the fragment initially
         StatusFragment fragment = new StatusFragment();
         android.support.v4.app.FragmentTransaction fragmentTransaction =
@@ -63,7 +64,6 @@ public class MainActivity extends AppCompatActivity
 
         if (currentUser != null) {
             String user = currentUser.getUsername();
-
 
 
             View headerView = navigationView.getHeaderView(0);
@@ -124,16 +124,21 @@ public class MainActivity extends AppCompatActivity
             Intent intentEditContacts = new Intent(this, EditContactsActivity.class);
             startActivity(intentEditContacts);
 
-        }
-        else if (id == R.id.action_notify){
+        } else if (id == R.id.action_notify) {
+            Intent intent = new Intent(this, MainActivity.class);
+            PendingIntent pendingIntent = PendingIntent.getActivity(this, 0, intent, PendingIntent.FLAG_UPDATE_CURRENT);
+
             Uri sound = RingtoneManager.getDefaultUri(RingtoneManager.TYPE_NOTIFICATION);
-            Notification.Builder notify = new Notification.Builder(MainActivity.this);
+            NotificationCompat.Builder notify = new NotificationCompat.Builder(MainActivity.this);
             notify.setContentTitle("New Message");
             notify.setContentText("Fadugba Messaged You");
             notify.setSound(sound);
+            notify.setContentIntent(pendingIntent);
+            notify.setSmallIcon(R.drawable.logo);
+
             Notification notification = notify.build();
             NotificationManager manager = (NotificationManager) getSystemService(NOTIFICATION_SERVICE);
-            manager.notify(0,notification);
+            manager.notify(5566, notification);
 
 
         }
@@ -171,7 +176,6 @@ public class MainActivity extends AppCompatActivity
         } else if (id == R.id.nav_class) {
 
 
-
         } else if (id == R.id.nav_contacts) {
             ContactsFragment fragment = new ContactsFragment();
             FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
@@ -185,10 +189,11 @@ public class MainActivity extends AppCompatActivity
             transaction.commit();
 
         } else if (id == R.id.nav_archive) {
-            ArchiveFragment fragment = new ArchiveFragment();
+            startActivity(new Intent(MainActivity.this,ArchiveActivity.class));
+          /*  ArchiveFragment fragment = new ArchiveFragment();
             FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
             transaction.replace(R.id.fragment_container, fragment);
-            transaction.commit();
+            transaction.commit();*/
         } else if (id == R.id.nav_forum) {
             ForumFragment fragment = new ForumFragment();
             FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
@@ -215,19 +220,19 @@ public class MainActivity extends AppCompatActivity
         return true;
     }
 
-      public void onClick(View v) {
+    public void onClick(View v) {
         ProfileFragment fragment = new ProfileFragment();
         android.support.v4.app.FragmentTransaction fragmentTransaction =
                 getSupportFragmentManager().beginTransaction();
         fragmentTransaction.replace(R.id.fragment_container, fragment);
         fragmentTransaction.commit();
-          DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
-          if (drawer.isDrawerOpen(GravityCompat.START)) {
-              drawer.closeDrawer(GravityCompat.START);
-          }
+        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+        if (drawer.isDrawerOpen(GravityCompat.START)) {
+            drawer.closeDrawer(GravityCompat.START);
+        }
 
 
     }
-    }
+}
 
 
