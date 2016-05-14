@@ -20,16 +20,13 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.TextView;
 
-import com.example.paulchidi.eaglesconnect.Chat;
-import com.example.paulchidi.eaglesconnect.EagleKinvey;
 import com.example.paulchidi.eaglesconnect.R;
-import com.example.paulchidi.eaglesconnect.fragments.ArchiveFragment;
+import com.example.paulchidi.eaglesconnect.fragments.ClassFragment;
 import com.example.paulchidi.eaglesconnect.fragments.ContactsFragment;
 import com.example.paulchidi.eaglesconnect.fragments.ForumFragment;
 import com.example.paulchidi.eaglesconnect.fragments.HelpFragment;
 import com.example.paulchidi.eaglesconnect.fragments.ProfileFragment;
 import com.example.paulchidi.eaglesconnect.fragments.StatusFragment;
-import com.kinvey.android.Client;
 import com.parse.ParseUser;
 
 import de.hdodenhof.circleimageview.CircleImageView;
@@ -175,6 +172,10 @@ public class MainActivity extends AppCompatActivity
             startActivity(intentYearbook);
         } else if (id == R.id.nav_class) {
 
+            ClassFragment fragment = new ClassFragment();
+            FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
+            fragmentTransaction.replace(R.id.fragment_container, fragment);
+            fragmentTransaction.commit();
 
         } else if (id == R.id.nav_contacts) {
             ContactsFragment fragment = new ContactsFragment();
@@ -190,10 +191,7 @@ public class MainActivity extends AppCompatActivity
 
         } else if (id == R.id.nav_archive) {
             startActivity(new Intent(MainActivity.this,ArchiveActivity.class));
-          /*  ArchiveFragment fragment = new ArchiveFragment();
-            FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
-            transaction.replace(R.id.fragment_container, fragment);
-            transaction.commit();*/
+
         } else if (id == R.id.nav_forum) {
             ForumFragment fragment = new ForumFragment();
             FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
